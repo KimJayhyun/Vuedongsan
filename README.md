@@ -80,15 +80,15 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 # VueJS의 로컬서버가 움직이는 원리
  - package-lock.json 참고
  
- 1.vue cli 라이브러리가 webpack-dev-server라는 라이브러리를 의존하고있다
+### 1.vue cli 라이브러리가 webpack-dev-server라는 라이브러리를 의존하고있다
     
 - ```"node_modules/@vue/cli-service"```에서 ```"dependencies"```를 확인하면 ```"webpack-dev-server"```를 사용
  
- 2.webpack-dev-server는 모듈 번들링후 배포 내용을 메모리에 저장 후 즉시 로컬서버에 반영하는 라이브러리다
+### 2.webpack-dev-server는 모듈 번들링후 배포 내용을 메모리에 저장 후 즉시 로컬서버에 반영하는 라이브러리다
 
- 3.webpack-dev-server의 라이브러리로 내부는 express라는 nodejs서버 라이브러리를 의존하고있다
+### 3.webpack-dev-server의 라이브러리로 내부는 express라는 nodejs서버 라이브러리를 의존하고있다
  - ```"node_modules/webpack-dev-server"```에서 ```"dependencies"```를 확인하면 ```"express"```를 사용 중
 
- 4.즉 npm run serve해서 실행되는 로컬 서버  = nodejs의 express앱을 베이스로 실행되는 서버가 된다
+### 4.즉 npm run serve해서 실행되는 로컬 서버  = nodejs의 express앱을 베이스로 실행되는 서버가 된다
 
- 5.실제로 webpack-dev-server는 express모듈에 의존하고있다
+### 5.실제로 webpack-dev-server는 express모듈에 의존하고있다
