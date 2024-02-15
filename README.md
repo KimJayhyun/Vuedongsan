@@ -77,6 +77,23 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
     - 라이브러리 버전, 프로젝트 설정 기록
 
 
+# npm 원리
+### 1. npm install 2 가지 유형
+1. 패키지 명을 명시해서 특정 패키지를 설치
+2. 패키지 명을 명시하지 않고 디렉토리의 ```package.json```을 참고하여 의존성 설치
+
+### 2. 특정 패키지 설치
+패키지를 설치할 때 크게 세 가지 옵션으로 구분됨
+1. ```-P``` ```-save-prod```
+    - 프로젝트의 ```node_modules```에 추가
+    - ```package.json```의 ```dependencies``` 에 추가
+1. ```-D``` ```-save-dev```
+    - 프로젝트의 ```node_modules```에 추가
+    - ```package.json```의 ```devDependencies``` 에 추가
+1. ```-g```
+    - **시스템**의 ```node_modules``` 폴더에 추가
+
+
 # VueJS의 로컬서버가 움직이는 원리
  - package-lock.json 참고
  
