@@ -1,10 +1,11 @@
 <template>
 
 
-  <div class="black-bg">
+  <div class="black-bg" v-if="isOpenModal == true">
     <div class="white-bg">
       <h4>상세페이지임</h4>
       <p>상세페이지 내용임</p>
+      <button @click="isOpenModal = false">닫기</button>
     </div>
   </div>
 
@@ -38,7 +39,7 @@
   </div>
 
   <div>   
-    <h4> {{ products[1] }} </h4>
+    <h4 @click="isOpenModal = true"> {{ products[1] }} </h4>
     <p> {{ price2 }} 만원 </p>
   </div>
 
@@ -61,7 +62,9 @@ export default {
       
       products : ['일원동', '이원동', '삼원동'],
       prices : [1, 2, 3],
-      votes : [0, 0, 0]
+      votes : [0, 0, 0],
+
+      isOpenModal : false
     }
   },
 
@@ -78,6 +81,26 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.black-bg {
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  position: fixed; padding: 20px;
+}
+
+.white-bg {
+  width: 100%; background: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+
 .romm-img {
   width: 100%;
   margin-top: 40px;
